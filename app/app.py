@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 
 #change to app.py
 import os
-import openai
+from openai import OpenAI
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
@@ -27,10 +27,11 @@ Base.metadata.create_all(engine)
 # with app.app_context():
 #     db.create_all()  # Create tables in the database
 
-# client = OpenAI(
-#     # This is the default and can be omitted
-#     api_key = os.getenv('OPENAI_API_KEY')
-# )
+client = OpenAI(
+    # This is the default and can be omitted
+    api_key = os.getenv('OPENAI_API_KEY')
+)
+
 
 @app.route('/ask', methods=['POST'])
 def ask_question():
@@ -42,15 +43,20 @@ def ask_question():
         logger.error(f"Error while parsing the request: {e}")
         return jsonify({"error": "Invalid input."}), 400
     # לעטוף בtry except
-    # response = openai.completions.create(
-    #     model="gpt-3.5-turbo",
-    #     prompt=question
-    # )
-    # print(response.choices[0].message['content'])
+    response = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": question,
+            }
+        ],
+        model="gpt-3.5-turbo",
+        max_tokens=50,
+    )
+    print(response.choices[0].message.content)
 
-    # answer = response.choices[0].message['content']
+    answer = response.choices[0].message.content
     # Store question and answer in the database
-    answer = "incomplete"
     logger.info(f'question: {question}, answer: {answer}')
     qa = qaEntry(question=question, answer=answer)
     try:

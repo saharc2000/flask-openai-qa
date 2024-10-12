@@ -7,7 +7,7 @@ services:
       - "5000:5000"
     environment:
       FLASK_APP: app.py
-      OPENAI_API_KEY: sk--_oZ7tzaZULZmVYnX0MMPvClSPXyvYAlFAOksIC2EUT3BlbkFJEn0kiDSqP2vLkim0EfcujKLbbJl_iDdK5sZaBY5joA
+      OPENAI_API_KEY: sk-GI5YG6_ciSz9ap7iGq-hsTJNNp28G0Gbo_Rj_QTfBuT3BlbkFJh9hwgha8ehAWOSzEQ265U0USpBmHBXZYCYigkjQLkA
       DATABASE_URL: postgresql://postgres:123@db:5432/alembic_db  # Ensure the user and password match the DB settings
     depends_on:
       - db
