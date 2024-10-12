@@ -41,3 +41,5 @@ LINE 1: INSERT INTO qa_entry (question, answer, date) VALUES ('What ...
 2024-10-12 23:01:22,184 - logger - INFO - qa committed
 2024-10-12 23:02:16,369 - logger - INFO - question: who are you?, answer: I am a language model AI created by OpenAI. My purpose is to assist and provide information to the best of my abilities based on the data I have been trained on. 
 2024-10-12 23:02:16,380 - logger - INFO - qa committed
+2024-10-12 23:20:37,012 - logger - INFO - question: what is Operating systems in one sentence?, answer: An operating system is a software that manages computer hardware and provides a platform for running applications.
+2024-10-12 23:20:37,027 - logger - INFO - qa committed

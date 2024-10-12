@@ -3,5 +3,5 @@ POST http://localhost:5000/ask
 Content-Type: application/json
 
 {
-  "question": "who are you?"
+  "question": "what is Operating systems in one sentence?"
 }

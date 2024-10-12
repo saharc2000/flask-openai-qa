@@ -68,6 +68,6 @@ def ask_question():
         return jsonify({"error": "Unable to save the question and answer."}), 500
     # entry = session.query(QaEntry).first()
     # print(entry)
-    return jsonify({"question": question, "answer": answer}), 201
+    return jsonify({"question": question, "answer": answer}), 200
 
 #add git ignore
