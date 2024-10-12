@@ -1,0 +1,52 @@
+services:
+  web:
+    build:
+      context: .  # Set the context to the root of your project
+      dockerfile: Dockerfile  # Use the Dockerfile in the root directory
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_APP: app.py
+      OPENAI_API_KEY: sk--_oZ7tzaZULZmVYnX0MMPvClSPXyvYAlFAOksIC2EUT3BlbkFJEn0kiDSqP2vLkim0EfcujKLbbJl_iDdK5sZaBY5joA
+      DATABASE_URL: postgresql://postgres:123@db:5432/alembic_db  # Ensure the user and password match the DB settings
+    depends_on:
+      - db
+    # command: ["sh", "-c", "./wait-for-it.sh db:5432 -- alembic upgrade head"]
+    volumes:
+      - ./app:/app  # Mounting the application code into the container for development
+    networks:
+      - mynetwork
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123  # Make sure to use a strong password for production
+      POSTGRES_DB: alembic_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persisting database data
+    networks:
+      - mynetwork
+
+  # alembic:
+  #   build:
+  #     context: .  # Set the context to the root of your project
+  #     dockerfile: Dockerfile  # Use the same Dockerfile as the web service
+  #   depends_on:
+  #     - db
+  #   environment:
+  #     DATABASE_URL: postgresql://postgres:123@db:5432/postgres
+  #   volumes:
+  #     - ./myapp:/app  # Mount the application code into the container for migrations
+  #   command: alembic upgrade head  # Run the Alembic migrations
+
+volumes:
+  postgres_data:
+networks:
+  mynetwork:
+    driver: bridge
+
+#docker compose with -e for security- data base password+ api key
+#להגדיר user וסיסמה לוקאלי אחרי הורדת הפרויקט

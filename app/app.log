@@ -1,0 +1,24 @@
+2024-10-12 17:43:50,279 - logger - INFO - question: What is the capital of France?, answer: incomplete
+2024-10-12 17:43:50,291 - logger - ERROR - Error while adding question-answer: (psycopg2.errors.UndefinedTable) relation "qa_entry" does not exist
+LINE 1: INSERT INTO qa_entry (question, answer, date) VALUES ('What ...
+                    ^
+
+[SQL: INSERT INTO qa_entry (question, answer, date) VALUES (%(question)s, %(answer)s, now()) RETURNING qa_entry.id, qa_entry.date]
+[parameters: {'question': 'What is the capital of France?', 'answer': 'incomplete'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-10-12 17:49:14,548 - logger - INFO - question: What is the capital of France?, answer: incomplete
+2024-10-12 17:49:14,558 - logger - ERROR - Error while adding question-answer: (psycopg2.errors.UndefinedColumn) column "date" of relation "qa_entry" does not exist
+LINE 1: INSERT INTO qa_entry (question, answer, date) VALUES ('What ...
+                                                ^
+
+[SQL: INSERT INTO qa_entry (question, answer, date) VALUES (%(question)s, %(answer)s, now()) RETURNING qa_entry.id, qa_entry.date]
+[parameters: {'question': 'What is the capital of France?', 'answer': 'incomplete'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-10-12 17:50:31,726 - logger - INFO - question: What is the capital of France?, answer: incomplete
+2024-10-12 17:50:31,734 - logger - ERROR - Error while adding question-answer: (psycopg2.errors.UndefinedColumn) column "date" of relation "qa_entry" does not exist
+LINE 1: INSERT INTO qa_entry (question, answer, date) VALUES ('What ...
+                                                ^
+
+[SQL: INSERT INTO qa_entry (question, answer, date) VALUES (%(question)s, %(answer)s, now()) RETURNING qa_entry.id, qa_entry.date]
+[parameters: {'question': 'What is the capital of France?', 'answer': 'incomplete'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
