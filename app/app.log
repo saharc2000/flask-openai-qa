@@ -18,3 +18,5 @@
 2024-10-13 09:33:06,927 - logger - INFO - qa committed
 2024-10-13 09:34:59,978 - logger - INFO - question: what is pytest in one sentence?, answer: Pytest is a testing framework for writing simple and scalable tests in Python.
 2024-10-13 09:34:59,992 - logger - INFO - qa committed
+2024-10-13 21:29:58,684 - logger - INFO - question: what is Werkzeug in one sentence?, answer: Werkzeug is a WSGI utility library for Python that provides tools for building web applications.
+2024-10-13 21:29:58,700 - logger - INFO - qa committed

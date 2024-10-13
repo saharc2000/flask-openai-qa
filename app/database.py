@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
-from config import Config
 
 class DataBase():
-    def __init__(self):
-        self.DATABASE_URL = Config.DATABASE_URL
+    def __init__(self, config):
+        self.DATABASE_URL = config.DATABASE_URL
+        print(f'DATABASE_URL: {self.DATABASE_URL}')
         self.engine = create_engine(self.DATABASE_URL)
         self.SessionLocal = sessionmaker(bind=self.engine)
 

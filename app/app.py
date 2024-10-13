@@ -1,19 +1,20 @@
 from flask import Flask, request, jsonify
-from models import qaEntry
-from logger import logger  #maybe change
-from database import DataBase
-from services import OpenAIService
-from config import Config
+from app.models import qaEntry
+from app.logger import logger  #maybe change
+from app.database import DataBase
+from app.services import OpenAIService
+from app.config import Config, TestConfig
 
 def create_app(test_config=None):
     app = Flask(__name__)
     if test_config:
-        app.config.update(test_config)
+        print("Test config")
+        config = TestConfig()
     else:
-        app.config.from_pyfile('config.py')  # Default config
-
-    database = DataBase()
-    service = OpenAIService()
+        config = Config()
+        
+    database = DataBase(config)
+    service = OpenAIService(config)
 
     @app.route('/ask', methods=['POST'])
     def ask_question():
@@ -48,4 +49,7 @@ if __name__ == '__main__':
     app = create_app()
     app.run(host="0.0.0.0", port=5000)
 
-#add git ignore
+# The app.py file is the main entry point for the application. It creates a Flask app and defines the /ask route,
+# which accepts a POST request with a JSON payload containing a question. The app then uses the OpenAIService
+# to get an answer from the OpenAI API and saves the question-answer pair to the database using the DataBase class.
+# Finally, it returns the question and answer in the response.

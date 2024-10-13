@@ -3,5 +3,5 @@ POST http://localhost:5000/ask
 Content-Type: application/json
 
 {
-  "question": "what is pytest in one sentence?"
+  "question": "what is Werkzeug in one sentence?"
 }

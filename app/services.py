@@ -1,9 +1,8 @@
 from openai import OpenAI
-from config import Config
 
 class OpenAIService:
-    def __init__(self):
-        self.api_key = Config.OPENAI_API_KEY
+    def __init__(self,config):
+        self.api_key = config.OPENAI_API_KEY
         self.client = OpenAI(
         api_key = self.api_key
     )

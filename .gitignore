@@ -1,0 +1,59 @@
+# Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Environment Variables
+.env
+
+# Virtual Environment
+venv/
+.env/
+.venv/
+
+# Logs and temp files
+*.log
+*.pot
+*.pid
+*.out
+*.txt
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+*.lock
+*.DS_Store
+
+# Database
+*.sqlite3
+*.db
+
+# Docker
+*.env
+docker-compose.override.yml
+docker-compose.override.yaml
+docker-compose.*
+docker/*
+
+# Flask-Specific
+instance/
+.webassets-cache
+
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# Alembic migration files
+migrations/versions/*.pyc
+migrations/versions/*.pyo
+
+# Pytest
+.pytest_cache/
+
+# Cache and backups
+.cache/
+*.bak
+*.backup
