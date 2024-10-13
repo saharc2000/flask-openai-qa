@@ -1,45 +1,20 @@
-2024-10-12 17:43:50,279 - logger - INFO - question: What is the capital of France?, answer: incomplete
-2024-10-12 17:43:50,291 - logger - ERROR - Error while adding question-answer: (psycopg2.errors.UndefinedTable) relation "qa_entry" does not exist
-LINE 1: INSERT INTO qa_entry (question, answer, date) VALUES ('What ...
-                    ^
-
-[SQL: INSERT INTO qa_entry (question, answer, date) VALUES (%(question)s, %(answer)s, now()) RETURNING qa_entry.id, qa_entry.date]
-[parameters: {'question': 'What is the capital of France?', 'answer': 'incomplete'}]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2024-10-12 17:49:14,548 - logger - INFO - question: What is the capital of France?, answer: incomplete
-2024-10-12 17:49:14,558 - logger - ERROR - Error while adding question-answer: (psycopg2.errors.UndefinedColumn) column "date" of relation "qa_entry" does not exist
-LINE 1: INSERT INTO qa_entry (question, answer, date) VALUES ('What ...
-                                                ^
-
-[SQL: INSERT INTO qa_entry (question, answer, date) VALUES (%(question)s, %(answer)s, now()) RETURNING qa_entry.id, qa_entry.date]
-[parameters: {'question': 'What is the capital of France?', 'answer': 'incomplete'}]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2024-10-12 17:50:31,726 - logger - INFO - question: What is the capital of France?, answer: incomplete
-2024-10-12 17:50:31,734 - logger - ERROR - Error while adding question-answer: (psycopg2.errors.UndefinedColumn) column "date" of relation "qa_entry" does not exist
-LINE 1: INSERT INTO qa_entry (question, answer, date) VALUES ('What ...
-                                                ^
-
-[SQL: INSERT INTO qa_entry (question, answer, date) VALUES (%(question)s, %(answer)s, now()) RETURNING qa_entry.id, qa_entry.date]
-[parameters: {'question': 'What is the capital of France?', 'answer': 'incomplete'}]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2024-10-12 22:30:02,313 - logger - INFO - question: What is the capital of France?, answer: incomplete
-2024-10-12 22:30:02,347 - logger - INFO - qa committed
-2024-10-12 22:39:41,754 - logger - INFO - question: What is the capital of France?, answer: incomplete
-2024-10-12 22:39:41,768 - logger - INFO - qa committed
-2024-10-12 22:58:34,161 - logger - INFO - question: What is the capital of France?, answer: The capital of France is Paris.
-2024-10-12 22:58:34,175 - logger - INFO - qa committed
-2024-10-12 23:00:10,593 - logger - INFO - question: who won the Israeli football championship in 2023/2024?, answer: Maccabi Haifa won the Israeli football championship in the 2023/2024 season.
-2024-10-12 23:00:10,608 - logger - INFO - qa committed
-2024-10-12 23:01:22,179 - logger - INFO - question: what are the symptoms of covid-19?, answer: The symptoms of COVID-19 can vary widely but may include:
-
-1. Fever or chills
-2. Cough
-3. Shortness of breath or difficulty breathing
-4. Fatigue
-5. Muscle or body aches
-6.
-2024-10-12 23:01:22,184 - logger - INFO - qa committed
-2024-10-12 23:02:16,369 - logger - INFO - question: who are you?, answer: I am a language model AI created by OpenAI. My purpose is to assist and provide information to the best of my abilities based on the data I have been trained on. 
-2024-10-12 23:02:16,380 - logger - INFO - qa committed
-2024-10-12 23:20:37,012 - logger - INFO - question: what is Operating systems in one sentence?, answer: An operating system is a software that manages computer hardware and provides a platform for running applications.
-2024-10-12 23:20:37,027 - logger - INFO - qa committed
+2024-10-13 08:51:00,225 - logger - INFO - question: what is api in one sentence?, answer: API (Application Programming Interface) is a set of rules and protocols that allows different software applications to communicate with each other.
+2024-10-13 08:51:00,286 - logger - INFO - qa committed
+2024-10-13 09:09:03,905 - logger - INFO - question: what is sql in one sentence?, answer: SQL (Structured Query Language) is a standard programming language for managing and manipulating relational databases.
+2024-10-13 09:09:03,944 - logger - INFO - qa committed
+2024-10-13 09:20:11,265 - logger - INFO - question: what is database in one sentence?, answer: A database is a structured collection of data that is organized in a way that allows for efficient storage, retrieval, and manipulation of information.
+2024-10-13 09:20:11,301 - logger - INFO - qa committed
+2024-10-13 09:20:30,642 - logger - INFO - question: what is ai in one sentence?, answer: AI, or artificial intelligence, is the simulation of human intelligence processes by machines, typically computer systems.
+2024-10-13 09:20:30,658 - logger - INFO - qa committed
+2024-10-13 09:27:15,829 - logger - INFO - question: what is flask in one sentence?, answer: Flask is a lightweight WSGI web application framework in Python.
+2024-10-13 09:27:15,860 - logger - INFO - qa committed
+2024-10-13 09:29:11,496 - logger - INFO - question: what is python in one sentence?, answer: Python is a high-level programming language known for its simplicity, readability, and versatility in a wide range of applications.
+2024-10-13 09:29:11,523 - logger - INFO - qa committed
+2024-10-13 09:29:20,385 - logger - INFO - question: what is python in one sentence?, answer: Python is a high-level, interpreted programming language that is known for its simplicity and readability.
+2024-10-13 09:29:20,438 - logger - INFO - qa committed
+2024-10-13 09:32:56,981 - logger - INFO - question: what is python in one sentence?, answer: Python is a high-level, interpreted programming language known for its readability and versatility in a wide range of applications.
+2024-10-13 09:32:56,999 - logger - INFO - qa committed
+2024-10-13 09:33:06,881 - logger - INFO - question: what is pytest in one sentence?, answer: Pytest is a testing framework in Python that allows for simple and efficient testing of code.
+2024-10-13 09:33:06,927 - logger - INFO - qa committed
+2024-10-13 09:34:59,978 - logger - INFO - question: what is pytest in one sentence?, answer: Pytest is a testing framework for writing simple and scalable tests in Python.
+2024-10-13 09:34:59,992 - logger - INFO - qa committed

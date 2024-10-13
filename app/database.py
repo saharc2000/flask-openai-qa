@@ -1,15 +1,19 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-# Replace `postgres_container` with your actual PostgreSQL container name
-DATABASE_URL = "postgresql://postgres:123@insaitioproject-db-1:5432/alembic_db"
+from sqlalchemy.orm import sessionmaker, declarative_base
+from config import Config
 
-engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(bind=engine)
+class DataBase():
+    def __init__(self):
+        self.DATABASE_URL = Config.DATABASE_URL
+        self.engine = create_engine(self.DATABASE_URL)
+        self.SessionLocal = sessionmaker(bind=self.engine)
 
-# Define a function to get a new session for each request
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+        Base = declarative_base()
+        Base.metadata.create_all(self.engine)
+
+    def get_db(self):
+        db = self.SessionLocal()
+        try:
+            yield db
+        finally:
+            db.close()

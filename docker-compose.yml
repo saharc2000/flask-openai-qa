@@ -8,7 +8,7 @@ services:
     environment:
       FLASK_APP: app.py
       OPENAI_API_KEY: sk-GI5YG6_ciSz9ap7iGq-hsTJNNp28G0Gbo_Rj_QTfBuT3BlbkFJh9hwgha8ehAWOSzEQ265U0USpBmHBXZYCYigkjQLkA
-      DATABASE_URL: postgresql://postgres:123@db:5432/alembic_db  # Ensure the user and password match the DB settings
+      DATABASE_URL: postgresql://postgres:123@insait-io-project-db-1:5432/alembic_db  # Ensure the user and password match the DB settings
     depends_on:
       - db
     # command: ["sh", "-c", "./wait-for-it.sh db:5432 -- alembic upgrade head"]
