@@ -16,6 +16,6 @@ class OpenAIService:
                 }
             ],
             model="gpt-3.5-turbo",
-            max_tokens=50,
+            max_tokens=100,
         )
         return response.choices[0].message.content

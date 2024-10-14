@@ -18,6 +18,8 @@ def create_app():
             question = data.get('question')
             if not question:
                 raise ValueError("No question provided.")
+            if len(question.split()) > 50:
+                raise ValueError("Question is too long.")
         except Exception as e:
             logger.error(f"Error while parsing the request: {e}")
             return jsonify({"error": "Invalid input."}), 400
