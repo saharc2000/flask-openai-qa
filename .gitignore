@@ -10,6 +10,7 @@ __pycache__/
 # Virtual Environment
 venv/
 .env/
+.env.test/
 .venv/
 
 #http requests
