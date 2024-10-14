@@ -1,6 +1,5 @@
 from sqlalchemy import Column, Integer, String, DateTime, func
 from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 metadata = Base.metadata

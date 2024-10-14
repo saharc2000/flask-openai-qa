@@ -12,6 +12,10 @@ venv/
 .env/
 .venv/
 
+#http requests
+http-requests/
+*.http
+
 # Logs and temp files
 *.log
 *.pot
