@@ -1,18 +1,13 @@
 from flask import Flask, request, jsonify
-from app.models import qaEntry
+from models import qaEntry
 from app.logger import logger  #maybe change
 from app.database import DataBase
 from app.services import OpenAIService
-from app.config import Config, TestConfig
+from app.config import Config
 
-def create_app(test_config=None):
-    app = Flask(__name__)
-    if test_config:
-        print("Test config")
-        config = TestConfig()
-    else:
-        config = Config()
-        
+def create_app():
+    app = Flask(__name__)        
+    config = Config()
     database = DataBase(config)
     service = OpenAIService(config)
 

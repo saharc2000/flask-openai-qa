@@ -4,9 +4,7 @@ from flask import json
 @pytest.fixture
 def client():
     from app.app import create_app
-    app = create_app({
-        "TESTING": True, 
-    })
+    app = create_app()
 
     with app.test_client() as client:
         with app.app_context():

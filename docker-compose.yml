@@ -29,25 +29,8 @@ services:
     networks:
       - mynetwork
 
-  test:
-    build: .
-    command: pytest
-    depends_on:
-      - web
-      - db
-    environment:
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - DATABASE_URL=${TESTS_DATABASE_URL}
-    volumes:
-      - ./:/app  # Mount the app code to run tests
-    networks:
-      - mynetwork
-
 volumes:
   postgres_data:
 networks:
   mynetwork:
     driver: bridge
-
-#docker compose with -e for security- data base password+ api key
-#להגדיר user וסיסמה לוקאלי אחרי הורדת הפרויקט
