@@ -1,5 +1,3 @@
-# Home Assignment for Insait's Backend Internship
-
 ## Project Overview
 
 This repository contains a Flask-based backend application designed as a home assignment for Insait's Backend Internship. The application provides an API endpoint to ask questions, leveraging the OpenAI API to fetch answers and storing both the questions and answers in a PostgreSQL database. The entire application is containerized using Docker and orchestrated with Docker Compose, facilitating easy deployment and management of services.
